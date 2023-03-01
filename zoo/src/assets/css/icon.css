@@ -1,0 +1,43 @@
+.el-icon-like-before {
+    background: url('../svg/like.svg') no-repeat;
+    font-size: 16px;
+    background-size: cover;
+}
+.el-icon-like-before:before{
+    content: "替";
+    font-size: 16px;
+    visibility: hidden;
+}
+
+.el-icon-like-after {
+    background: url('../svg/liked.svg') no-repeat;
+    font-size: 16px;
+    background-size: cover;
+}
+.el-icon-like-after:before{
+    content: "替";
+    font-size: 16px;
+    visibility: hidden;
+}
+
+.el-icon-favorite {
+    background: url('../svg/favorite.svg') no-repeat;
+    font-size: 16px;
+    background-size: cover;
+}
+.el-icon-favorite:before{
+    content: "替";
+    font-size: 16px;
+    visibility: hidden;
+}
+
+.el-icon-favorited {
+    background: url('../svg/favorited.svg') no-repeat;
+    font-size: 16px;
+    background-size: cover;
+}
+.el-icon-favorited:before{
+    content: "替";
+    font-size: 16px;
+    visibility: hidden;
+}

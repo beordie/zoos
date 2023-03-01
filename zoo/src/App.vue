@@ -4,17 +4,36 @@
       <el-header class="header-color">
         <el-row type="flex">
           <el-col :span="10">
-            
+            <div>
+                <img class="img-center" style="height: 60px;" :src="logo"/>
+                <img class="img-center" style="height: 60px;" :src="logo1"/>
+                <img class="img-center" style="height: 60px;" :src="logo2"/>
+                <img class="img-center" style="height: 60px;" :src="logo3"/>
+                <img class="img-center" style="height: 60px;" :src="logo4"/>
+                <img class="img-center" style="height: 60px;" :src="logo5"/>
+                <img class="img-center" style="height: 60px;" :src="logo6"/>
+              </div>
           </el-col>
-          <el-col :span="13" class="header-color">
+          <el-col :span="8" class="header-color">
             <el-menu mode="horizontal" router>
               <el-submenu index="1">
                 <template slot="title">分类查询</template>
-                <el-menu-item index="1-1">国家一级保护动物</el-menu-item>
-                <el-menu-item index="1-2">国家二级保护动物</el-menu-item>
+                <el-menu-item disabled index="1-1">国家一级保护动物</el-menu-item>
+                <el-menu-item disabled index="1-2">国家二级保护动物</el-menu-item>
                 <el-menu-item index="1-3">哺乳动物</el-menu-item>
               </el-submenu>
+              <el-submenu index="2">
+                <template slot="title">摄影作品</template>
+                <el-menu-item index="2-1" route="/photo">作品列表</el-menu-item>
+              </el-submenu>
             </el-menu>
+          </el-col>
+          <el-col :span="5">
+            <div style="height:40px; line-height: 60px;">
+              <el-input disabled placeholder="请输入保护动物名" v-model="search_text">
+                <el-button @click="search" slot="append" icon="el-icon-search"></el-button>
+              </el-input>
+            </div>
           </el-col>
           <el-col :span="1">
             <div class="header-avatar">
@@ -26,7 +45,8 @@
                   <el-dropdown-item @click.native="login">登陆</el-dropdown-item>
                   <el-dropdown-item @click.native="register">注册</el-dropdown-item>
                   <el-dropdown-item disabled>信息</el-dropdown-item>
-                  <el-dropdown-item divided>退出</el-dropdown-item>
+                  <el-dropdown-item divided @click.native="report">举报</el-dropdown-item>
+                  <el-dropdown-item>退出</el-dropdown-item>
                 </el-dropdown-menu>
               </el-dropdown>
             </div>
@@ -81,6 +101,9 @@
       <el-dialog title="登陆" :visible.sync="LoginVisible" :width="width" :before-close="handleClose">
         <Login />
       </el-dialog>
+      <el-dialog title="举报" :visible.sync="ReportVisible" :width="width" :before-close="handleClose">
+        <Report />
+      </el-dialog>
     </el-container>
   </div>
 </template>
@@ -88,16 +111,25 @@
 <script>
 import Register from './components/plugin/register-in.vue'
 import Login from './components/plugin/sing-in.vue'
+import Report from './components/plugin/report-in.vue'
 
 export default {
   name: 'App',
   components: {
-    Register, Login
+    Register, Login, Report
   },
   data() {
     return {
+      logo: require('./assets/images/logo.png'),
+      logo1: require('./assets/images/logo1.png'),
+      logo2: require('./assets/images/logo2.png'),
+      logo3: require('./assets/images/logo3.png'),
+      logo4: require('./assets/images/logo4.png'),
+      logo5: require('./assets/images/logo5.png'),
+      logo6: require('./assets/images/logo6.png'),
       RegisterVisible: false,
       LoginVisible: false,
+      ReportVisible: false,
       width: '30%',
     }
   },
@@ -110,6 +142,12 @@ export default {
     },
     login() {
       this.LoginVisible = true
+    },
+    report() {
+      this.ReportVisible = true
+    },
+    search() {
+      this.$router.push('/search')
     }
   }
 }

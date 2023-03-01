@@ -6,6 +6,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/css/bootstrap.css'
 import '@/assets/css/fonts.css'
 import '@/assets/css/style.css'
+import '@/assets/css/icon.css'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
