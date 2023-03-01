@@ -5,33 +5,94 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1284d0b9-3fcb-449a-9ff3-22766d82225b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/ZooApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zoo/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zoo/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/Home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/AnimalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/FavoritesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/LikeListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/PhotographsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/PicturesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/ReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/Favorites.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/LikeList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/Photographs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/Pictures.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/Report.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/AnimalMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/FavoritesMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/LikeListMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/PhotographsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/PicturesMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/ReportMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/IAnimalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/IFavoritesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/ILikeListService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/IPhotographsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/IPicturesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/IReportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/AnimalServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/FavoritesServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/LikeListServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/PhotographsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/PicturesServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/ReportServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/utils/MybatisPlusUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/AnimalMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/FavoritesMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/LikeListMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/PhotographsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/PicturesMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/ReportMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/beordie/mammalian/MammaliaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/ZooApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/ZooApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="application" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="userSettingsFile" value="D:\java_install\maven\apache-maven-3.6.3\conf\settings.xml" />
+        <option name="localRepository" value="E:\downLoad-Package\apache-maven-3.8.1\maven-repo" />
+        <option name="mavenHome" value="E:/downLoad-Package/apache-maven-3.8.1" />
+        <option name="userSettingsFile" value="E:\downLoad-Package\apache-maven-3.8.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2MOPw2cCnkNc5O37DH9bb7llFCY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -40,14 +101,25 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
-  </component>
-  <component name="RunManager">
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/图库/classProject/2023/zoos/zoos-serve",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "MavenSettings"
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.ZooApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -59,6 +131,82 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MybatisPlusUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.beordie.mammalian.utils.MybatisPlusUtils" />
+      <module name="zoos-serve" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.beordie.mammalian.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MammaliaTest.testPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="zoos-serve" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.beordie.mammalian.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.beordie.mammalian" />
+      <option name="MAIN_CLASS_NAME" value="com.beordie.mammalian.MammaliaTest" />
+      <option name="METHOD_NAME" value="testPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MammaliaTest.testQuery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="zoos-serve" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.beordie.mammalian.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.beordie.mammalian" />
+      <option name="MAIN_CLASS_NAME" value="com.beordie.mammalian.MammaliaTest" />
+      <option name="METHOD_NAME" value="testQuery" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MammaliaTest.testUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="zoos-serve" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.beordie.mammalian.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.beordie.mammalian" />
+      <option name="MAIN_CLASS_NAME" value="com.beordie.mammalian.MammaliaTest" />
+      <option name="METHOD_NAME" value="testUsername" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZooApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zoos-serve" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.beordie.ZooApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MammaliaTest.testPage" />
+        <item itemvalue="JUnit.MammaliaTest.testUsername" />
+        <item itemvalue="JUnit.MammaliaTest.testQuery" />
+        <item itemvalue="应用程序.MybatisPlusUtils" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -68,7 +216,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1677635891425</updated>
+<<<<<<< HEAD
       <workItem from="1677635893096" duration="1161000" />
+=======
+      <workItem from="1677635893096" duration="566000" />
+      <workItem from="1677659088580" duration="1395000" />
+>>>>>>> d3a1256e28a317ba8374bf50e6868bf7abf587b4
     </task>
     <servers />
   </component>

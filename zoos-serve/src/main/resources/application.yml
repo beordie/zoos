@@ -1,0 +1,28 @@
+# 配置端口信息
+server:
+  port: 80
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    encoding:
+      charset: utf-8
+      force: true
+      enabled: true
+
+# 数据库连接四大参数
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/mammalian?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+#  http:
+#    encoding:
+#      charset: utf-8
+#      force: true
+#      enabled: true
+# mybatis 的简单配置
+mybatis:
+  type-aliases-package: com.beordie.model
+  mapper-locations: "classpath:mybatis/mapper/*.xml"
+
