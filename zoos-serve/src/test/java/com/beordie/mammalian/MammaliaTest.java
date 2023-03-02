@@ -2,8 +2,8 @@ package com.beordie.mammalian;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.beordie.mammalian.entity.User;
-import com.beordie.mammalian.mapper.UserMapper;
+import com.beordie.model.entity.User;
+import com.beordie.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

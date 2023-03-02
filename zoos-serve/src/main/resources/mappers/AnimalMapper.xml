@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beordie.mapper.AnimalMapper">
+    <select id="getClassSpecies" resultType="java.lang.String">
+        select distinct(class_species)
+        from animal
+    </select>
+
+    <select id="getSubclass" parameterType="string" resultType="java.lang.String">
+        select distinct(subclass)
+        from animal
+        where
+            class_species = #{classSpecies}
+    </select>
+
+    <select id="getOrder" parameterType="string" resultType="java.lang.String">
+        select distinct(`order`)
+        from animal
+        where
+            subclass = #{subclass}
+    </select>
+
+    <select id="getFamily" parameterType="string" resultType="java.lang.String">
+        select distinct(family)
+        from animal
+        where
+            `order` = #{order}
+    </select>
+
+    <select id="getGenus" parameterType="string" resultType="java.lang.String">
+        select distinct(genus)
+        from animal
+        where
+            family = #{family}
+    </select>
+</mapper>

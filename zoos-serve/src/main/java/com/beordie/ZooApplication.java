@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @User beordie
  */
 @SpringBootApplication
-@MapperScan("com.beordie.mammalian.mapper")
 public class ZooApplication {
     public static void main(String[] args) {
         SpringApplication.run(ZooApplication.class,args);
