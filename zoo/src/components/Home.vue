@@ -4,7 +4,7 @@
       <div style="widows: 1000px" class="section-overlap-image">
         <el-carousel style="height: 680px">
           <el-carousel-item style="height: 680px" class="section-overlap-image" v-for="(image, index) in main_image" :key="index">
-            <img style="height: 680px" :src="image"/>
+            <img style="height: 680px" :src="host + image.pictureAddress"/>
           </el-carousel-item>
         </el-carousel>
       </div>
@@ -13,17 +13,17 @@
           <div class="row">
             <div class="col-md-6 col-lg-5 col-xl-4">
               <div class="wow-outer">
-                <h6 class="font-weight-sbold text-primary wow slideInDown">I'm Jonathan Davis</h6>
+                <h6 class="font-weight-sbold text-primary wow slideInDown">17 组</h6>
               </div>
             </div>
             <div class="col-md-8 col-lg-7 col-xl-6">
-              <h1 class="wow-outer"><span class="font-weight-bold wow-outer"><span class="wow slideInUp">Photographer</span></span><span class="font-weight-exlight wow-outer"><span class="wow slideInUp" data-wow-delay=".1s">& Retoucher</span></span></h1>
+              <h1 class="wow-outer"><span class="font-weight-bold wow-outer"><span class="wow slideInUp">哺乳纲</span></span><span class="font-weight-exlight wow-outer"><span class="wow slideInUp" data-wow-delay=".1s">动物查询</span></span></h1>
             </div>
             <div class="col-md-6 col-lg-5 col-xl-4 col-offset-1">
               <div class="wow-outer">
-                <h4 class="font-weight-light wow slideInUp" data-wow-delay=".2s">Based in San Diego, I specialize in various kinds of photography</h4>
+                <h4 class="font-weight-light wow slideInUp" data-wow-delay=".2s">分为好几部分</h4>
               </div>
-              <div class="wow-outer button-outer"><a class="button button-lg button-primary button-winona wow slideInUp" href="#" data-wow-delay=".3s">View Portfolio</a></div>
+              <div class="wow-outer button-outer"><a class="button button-lg button-primary button-winona wow slideInUp" href="" data-wow-delay=".3s">开始查询</a></div>
             </div>
           </div>
         </div>
@@ -41,10 +41,10 @@
                 <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer" :class="zoo.horizontal ? 'thumbnail-corporate-lg' : ''" v-for="(zoo, index) in part_zoos" :key="index">
                   <!-- Thumbnail Corporate-->
                   <article class="thumbnail-corporate wow slideInDown">
-                    <img class="thumbnail-corporate-image" :src="zoo.image" :width="zoo.width" :height="zoo.height"/>
+                    <img class="thumbnail-corporate-image" :src="host + zoo.upperGenusClassification" width="100%" height="100%"/>
                     <div class="thumbnail-corporate-caption">
-                      <p class="thumbnail-corporate-title"><a href="#">{{ zoo.name }}</a></p>
-                      <p>{{ zoo.info }}</p><a class="thumbnail-corporate-link" href="images/gallery-original-1.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                      <p class="thumbnail-corporate-title"><a>{{ zoo.chineseName }}</a></p>
+                      <div v-html="zoo.details"></div><a class="thumbnail-corporate-link" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span @click="toSearch(zoo.id)" class="icon mdi mdi-magnify"></span></a>
                     </div>
                     <div class="thumbnail-corporate-dummy"></div>
                   </article>
@@ -62,14 +62,14 @@
         <div class="row row-50">
           <div class="col-sm-6 col-lg-4 wow-outer" v-for="(zoo, index) in recommend_zoos" :key="index">
             <!-- Post Classic-->
-            <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img :src="zoo.image" style="width: 370px; height: 264px;"/></a>
+            <article class="post-classic wow slideInLeft"><a class="post-classic-media" href=""><img :src="host + zoo.upperGenusClassification" style="width: 370px; height: 264px;"/></a>
               <ul class="post-classic-meta">
-                <li><a class="button-winona" href="#"> {{ zoo.name }} </a></li>
+                <li><a class="button-winona" href=""> {{ zoo.chineseName }} </a></li>
                 <li>
-                  <el-tag>{{ zoo.classify }}</el-tag>
+                    <el-tag>{{ zoo.subclass }} | {{ zoo.orders }} | {{ zoo.family }} | {{ zoo.genus }}</el-tag>
                 </li>
               </ul>
-              <h4 class="post-classic-title"><a href="#"> {{ zoo.info }} </a></h4>
+              <h4 class="post-classic-title"><div v-html="zoo.details"></div></h4>
             </article>
           </div>
         </div>
@@ -125,37 +125,49 @@ export default {
   },
   data() {
     return {
-      main_image: [require('../assets/images/screens-1-1046x720.jpg'), require('../assets/images/screens-1-1046x720.jpg')],
-      part_zoos: [
-        {
-          name: '熊猫',
-          image: require('../assets/images/sidebar-blog-1-370x264.jpg'),
-          info: '巴拉巴拉巴拉',
-          horizontal: true
-        },
-        {
-          name: '狗熊',
-          image: require('../assets/images/team-1-336x336.jpg'),
-          info: '巴拉巴拉巴拉',
-          horizontal: false
-        }
-      ],
-      recommend_zoos: [
-        {
-          name: '熊猫',
-          image: require('../assets/images/team-1-336x336.jpg'),
-          info: '巴拉巴拉巴拉',
-          classify: '哺乳类'
-        },
-        {
-          name: '狗熊',
-          image: require('../assets/images/team-1-336x336.jpg'),
-          info: '巴拉巴拉巴拉',
-          classify: '哺乳类'
-        },
-      ]
+      main_image: [],
+      part_zoos: [],
+      recommend_zoos: [],
+      host: this.$host
     }
   },
+  methods: {
+    toSearch(id) {
+      this.$router.push({path:"/search",query:{id:id}});
+    },
+    getPartZoos() {
+      this.$http.get(this.$host+'/animal/select/random').then(res => {
+          if (res.data.code != 200) {
+            this.$message.error('当前服务异常，请稍后再试');
+          } else {
+            this.part_zoos = res.data.data;
+          }
+        })
+    },
+    getRecommendZoos() {
+      this.$http.get(this.$host+'/animal/select/recommend').then(res => {
+          if (res.data.code != 200) {
+            this.$message.error('当前服务异常，请稍后再试');
+          } else {
+            this.recommend_zoos = res.data.data;
+          }
+        })
+    },
+    getMainImage() {
+      this.$http.get(this.$host+'/pictures/rotated').then(res => {
+          if (res.data.code != 200) {
+            this.$message.error('当前服务异常，请稍后再试');
+          } else {
+            this.main_image = res.data.data;
+          }
+        })
+    }
+  },
+  mounted() {
+    this.getMainImage()
+    this.getPartZoos()
+    this.getRecommendZoos()
+  }
 }
 </script>
 

@@ -6,14 +6,14 @@
         <form>
           <!-- New password -->
           <div class="mb-3 input-group-lg">
-            <input v-model="name" class="form-control" type="text" placeholder="输入举报人姓名">
+            <input v-model="event.name" class="form-control" type="text" placeholder="输入举报人姓名">
           </div>
           <div class="mb-3 input-group-lg">
-            <input v-model="name" class="form-control" type="text" placeholder="输入举报人联系方式">
+            <input v-model="event.phone" class="form-control" type="text" placeholder="输入举报人联系方式">
           </div>
           <!-- Confirm password -->
           <div class="mb-3 input-group-lg">
-            <input v-model="name" class="form-control" type="text" placeholder="输入举报事件">
+            <input v-model="event.reportedEvent" class="form-control" type="text" placeholder="输入举报事件">
           </div>
           <!-- Button -->
           <div class="d-grid"><button @click="report()" type="button" class="btn btn-lg btn-primary">提交举报</button>
@@ -31,21 +31,20 @@
   export default {
     data() {
       return {
-        email: '',
-        emailCode: '',
-        name: '',
-        password: '',
-        newPassword: '',
+        event: {
+          name: '',
+          phone: '',
+          reportedEvent: ''
+        }
       };
     },
     methods: {
       report() {
-        this.$http.post('http://127.0.0.1:83/user/register', {
-          name: this.name,
-          password: this.password,
-          email: this.email,
-          emailCode: this.emailCode
-        }).then(res => {
+        if(this.event.name == '' || this.event.phone == '' || this.event.reportedEvent == '') {
+          this.$message.warning('信息不能为空')
+          return;
+        }
+        this.$http.post(this.$host + '/report/commit', this.event).then(res => {
           if (res.data.code != 200) {
             this.$message.error(res.data.message);
           } else {
@@ -54,7 +53,7 @@
               type: 'success',
               showClose: true
             });
-            this.$router.push('/');
+            this.$parent.handleClose();
           }
         })
       }

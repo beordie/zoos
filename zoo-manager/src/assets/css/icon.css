@@ -1,0 +1,65 @@
+.el-icon-classify {
+    background: url('../svg/classify.svg') no-repeat;
+    font-size: 24px;
+    background-size: cover;
+}
+.el-icon-classify:before{
+    content: "替";
+    font-size: 24px;
+    visibility: hidden;
+}
+
+.el-icon-image {
+    background: url('../svg/image.svg') no-repeat;
+    font-size: 24px;
+    background-size: cover;
+}
+.el-icon-image:before{
+    content: "替";
+    font-size: 24px;
+    visibility: hidden;
+}
+
+.el-icon-zoo {
+    background: url('../svg/zoo.svg') no-repeat;
+    font-size: 24px;
+    background-size: cover;
+}
+.el-icon-zoo:before{
+    content: "替";
+    font-size: 24px;
+    visibility: hidden;
+}
+
+.el-icon-photo {
+    background: url('../svg/photo.svg') no-repeat;
+    font-size: 24px;
+    background-size: cover;
+}
+.el-icon-photo:before{
+    content: "替";
+    font-size: 24px;
+    visibility: hidden;
+}
+
+.el-icon-user {
+    background: url('../svg/user.svg') no-repeat;
+    font-size: 24px;
+    background-size: cover;
+}
+.el-icon-user:before{
+    content: "替";
+    font-size: 24px;
+    visibility: hidden;
+}
+
+.el-icon-report {
+    background: url('../svg/report.svg') no-repeat;
+    font-size: 24px;
+    background-size: cover;
+}
+.el-icon-report:before{
+    content: "替";
+    font-size: 24px;
+    visibility: hidden;
+}

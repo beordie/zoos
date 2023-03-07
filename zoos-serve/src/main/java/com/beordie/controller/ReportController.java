@@ -26,8 +26,8 @@ import java.util.List;
  * @author coffeemao
  * @since 2023-03-01
  */
-@Controller
-@RequestMapping("/mammalian/report")
+@RestController
+@RequestMapping("/report")
 public class ReportController {
     @Autowired
     private IReportService reportService;
@@ -48,7 +48,14 @@ public class ReportController {
     }
 
     @AccessAnnotation
-    @GetMapping("delete")
+    @GetMapping("count")
+    public Result<Long> selectUsers() {
+        long count = reportService.count();
+        return new Result<>(count);
+    }
+
+    @AccessAnnotation
+    @PostMapping("delete")
     public Result deleteUser(@RequestParam("reportId") Integer reportId) {
         QueryWrapper<Report> queryWrapper = ReportFactory.buildQueryByReportId(reportId);
         boolean remove = reportService.remove(queryWrapper);

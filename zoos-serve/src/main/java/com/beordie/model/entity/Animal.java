@@ -2,6 +2,11 @@ package com.beordie.model.entity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -21,6 +26,7 @@ public class Animal implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("唯一主键")
+    @TableId(type = IdType.AUTO)
     private Integer id;
 
     @ApiModelProperty("纲种")
@@ -30,7 +36,7 @@ public class Animal implements Serializable {
     private String subclass;
 
     @ApiModelProperty("目")
-    private String order;
+    private String orders;
 
     @ApiModelProperty("科")
     private String family;
@@ -41,7 +47,7 @@ public class Animal implements Serializable {
     @ApiModelProperty("种")
     private String species;
 
-    @ApiModelProperty("上属分类")
+    @ApiModelProperty("主图")
     private String upperGenusClassification;
 
     @ApiModelProperty("保护等级")
@@ -79,6 +85,9 @@ public class Animal implements Serializable {
 
     @ApiModelProperty("逻辑删除")
     private Integer deleted;
+
+    @TableField(select = false, exist = false)
+    private List<String> smallPicture;
 
     @Override
     public String toString() {

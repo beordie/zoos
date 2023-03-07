@@ -42,7 +42,7 @@ public class PhotographsServiceImpl extends ServiceImpl<PhotographsMapper, Photo
             });
         }
         photographs.stream().forEach(photograph->{
-            photograph.setLike(likes.get(photograph.getId()));
+            photograph.setLiked(likes.get(photograph.getId()));
         });
         return photographs;
     }

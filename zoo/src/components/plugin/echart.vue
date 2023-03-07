@@ -7,9 +7,42 @@ import * as echarts from 'echarts';
 export default {
     data() {
             return {
+                first: [],
+                second: [],
+                third: []
         }
     },
     methods: {
+        getFirst() {
+            this.$http.get(this.$host+'/animal/data/kinds').then(res => {
+                if (res.data.code != 200) {
+                    this.$message.error('当前服务异常，请稍后再试');
+                } else {
+                    this.first = res.data.data;
+                }
+                this.buildChart()
+            })
+        },
+        getSecond(name) {
+            this.$http.get(this.$host+'/animal/data/family?order=' + name).then(res => {
+                if (res.data.code != 200) {
+                    this.$message.error('当前服务异常，请稍后再试');
+                } else {
+                    this.second = res.data.data;
+                }
+                this.buildChart()
+            })
+        },
+        getThrid(name) {
+            this.$http.get(this.$host+'/animal/data/genus?family=' + name).then(res => {
+                if (res.data.code != 200) {
+                    this.$message.error('当前服务异常，请稍后再试');
+                } else {
+                    this.third = res.data.data;
+                }
+                this.buildChart()
+            })
+        },
         buildChart() {
             var chartDom = document.getElementById('chart');
             var myChart = echarts.init(chartDom);
@@ -45,11 +78,7 @@ export default {
                     labelLine: {
                     show: false
                     },
-                    data: [
-                    { value: 1548, name: 'Search Engine' },
-                    { value: 775, name: 'Direct' },
-                    { value: 679, name: 'Marketing', selected: true }
-                    ]
+                    data: this.third
                 },
                 {
                     name: 'Access From',
@@ -63,11 +92,7 @@ export default {
                     labelLine: {
                     show: false
                     },
-                    data: [
-                    { value: 1548, name: 'Search Engine' },
-                    { value: 775, name: 'Direct' },
-                    { value: 679, name: 'Marketing', selected: true }
-                    ]
+                    data: this.second
                 },
                 {
                     name: 'Access From',
@@ -108,24 +133,28 @@ export default {
                         }
                     }
                     },
-                    data: [
-                    { value: 1048, name: 'Baidu' },
-                    { value: 335, name: 'Direct' },
-                    { value: 310, name: 'Email' },
-                    { value: 251, name: 'Google' },
-                    { value: 234, name: 'Union Ads' },
-                    { value: 147, name: 'Bing' },
-                    { value: 135, name: 'Video Ads' },
-                    { value: 102, name: 'Others' }
-                    ]
+                    data: this.first
                 }
                 ]
             }
-            option && myChart.setOption(option)
+            myChart.setOption(option, true)
+            const _this = this;
+            myChart.on('dblclick', function (params) {
+                if(params.componentIndex == 2) {
+                    _this.getSecond(params.data.name)
+                } else if(params.componentIndex == 1) {
+                    _this.getThrid(params.data.name)
+                }
+            });
         }
     },
     mounted() {
-      this.buildChart()
+        
+    },
+    created() {
+        this.getFirst()
+        this.getSecond('单孔目')
+        this.getThrid('金毛鼹科')
     }
 }
 </script>

@@ -27,14 +27,14 @@ import java.util.List;
  * @author coffeemao
  * @since 2023-03-01
  */
-@Controller
-@RequestMapping("/mammalian/photographs")
+@RestController
+@RequestMapping("/photographs")
 public class PhotographsController {
     @Autowired
     private IPhotographsService photographsService;
 
     @AccessAnnotation
-    @GetMapping("insert")
+    @PostMapping("insert")
     public Result createPhotographs(@RequestBody Photographs photographs) {
         photographs.setShootingTime(LocalDateTime.now());
         boolean save = photographsService.save(photographs);
@@ -52,7 +52,7 @@ public class PhotographsController {
     }
 
     @AccessAnnotation
-    @GetMapping("delete")
+    @PostMapping("delete")
     public Result deletePhotographs(@RequestParam("photoId") Integer photoId) {
         QueryWrapper<Photographs> queryWrapper = PhotoFactory.buildQueryByPhotoId(photoId);
         boolean remove = photographsService.remove(queryWrapper);
@@ -60,9 +60,15 @@ public class PhotographsController {
     }
 
     @AccessAnnotation
-    @GetMapping("update")
+    @PostMapping("update")
     public Result updatePhotographs(@RequestBody Photographs photographs) {
         boolean update = photographsService.updateById(photographs);
         return update ? new Result<>() : Result.failed();
+    }
+
+    @GetMapping("total")
+    public Result selectTotal() {
+        long total = photographsService.count();
+        return new Result(total);
     }
 }

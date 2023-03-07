@@ -2,6 +2,10 @@ package com.beordie.model.entity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -21,6 +25,7 @@ public class Photographs implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("摄影作品主键")
+    @TableId(type = IdType.AUTO)
     private Integer id;
 
     @ApiModelProperty("中文名")
@@ -38,10 +43,14 @@ public class Photographs implements Serializable {
     @ApiModelProperty("拍摄地点")
     private String shootingLocation;
 
+    @ApiModelProperty("拍摄图片")
+    private String picture;
+
     /**
      * 是否点赞
      */
-    private Integer like;
+    @TableField(select = false)
+    private Integer liked;
 
     @Override
     public String toString() {

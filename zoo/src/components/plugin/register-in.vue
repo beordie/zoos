@@ -6,12 +6,12 @@
         <form>
           <!-- New password -->
           <div class="mb-3 input-group-lg">
-            <input v-model="name" class="form-control" type="text" placeholder="输入用户名">
+            <input v-model="sign.username" class="form-control" type="text" placeholder="输入用户名">
           </div>
           <div class="mb-3 position-relative">
             <!-- Input group -->
             <div class="input-group input-group-lg">
-              <input v-model="password" class="form-control fakepassword" type="password" id="psw-input"
+              <input v-model="sign.password" class="form-control fakepassword" type="password" id="psw-input"
                 placeholder="输入密码">
               <span class="input-group-text p-0">
                 <i class="fakepasswordicon fa-solid fa-eye-slash cursor-pointer p-2 w-40px"></i>
@@ -40,16 +40,15 @@
   export default {
     data() {
       return {
-        email: '',
-        emailCode: '',
-        name: '',
-        password: '',
-        newPassword: '',
+        sign: {
+          username: '',
+          password: ''
+        },
+        newPassword: ''
       };
     },
     methods: {
       getCode() {
-        console.log(this.email)
         this.$http.post('http://127.0.0.1:83/email/code', {
           email: this.email
         }).then(res => {
@@ -65,21 +64,24 @@
         })
       },
       register() {
-        this.$http.post('http://127.0.0.1:83/user/register', {
-          name: this.name,
-          password: this.password,
-          email: this.email,
-          emailCode: this.emailCode
-        }).then(res => {
+        if(this.sign.username == '' || this.sign.password == '') {
+          this.$message.warning('用户名密码不能为空')
+          return;
+        }
+        if(this.newPassword !== this.sign.password) {
+          this.$message.warning('密码不一致')
+          return;
+        }
+        this.$http.post(this.$host + '/user/register', this.sign).then(res => {
           if (res.data.code != 200) {
             this.$message.error(res.data.message);
           } else {
             this.$message({
-              message: res.data.message,
+              message: '注册成功',
               type: 'success',
               showClose: true
             });
-            this.$router.push('/');
+            this.$parent.handleClose();
           }
         })
       }

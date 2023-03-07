@@ -4,74 +4,76 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1284d0b9-3fcb-449a-9ff3-22766d82225b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/config/MybatisPlusConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/AnimalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/FavoritesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/LikeListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/PhotographsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/PicturesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/ReportController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/Favorites.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/LikeList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/Photographs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/Pictures.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/Report.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/AnimalMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/FavoritesMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/LikeListMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/PhotographsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/PicturesMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/ReportMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/IAnimalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/IFavoritesService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/ILikeListService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/IPhotographsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/IPicturesService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/IReportService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/IUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/AnimalServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/FavoritesServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/LikeListServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/PhotographsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/PicturesServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/ReportServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mammalian/utils/MybatisPlusUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/AnimalMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/FavoritesMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/LikeListMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/PhotographsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/PicturesMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/ReportMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/beordie/mammalian/MammaliaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3474f89e-d4c4-4f15-9714-080491729eab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/factory/PicturesFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/request/AnimalKind.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/request/AnimalPicture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/request/AnimalZoo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/request/Sign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/IEmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/IMessageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/HtmlEmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/util/StringUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/zoo/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/zoo/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/zoo/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/zoo/4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/src/assets/css/icon.css" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/assets/css/icon.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/src/components/photo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/photo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/src/components/plugin/echart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/plugin/echart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/src/components/plugin/gang.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/plugin/gang.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/src/components/plugin/mu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/plugin/mu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/src/components/plugin/register-in.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/plugin/register-in.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/src/components/plugin/report-in.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/plugin/report-in.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/src/components/plugin/sing-in.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/plugin/sing-in.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/src/components/search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/search.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/ZooApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/ZooApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/config/MvcConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/config/MvcConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/AnimalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/AnimalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/FavoritesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/FavoritesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/LikeListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/LikeListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/PhotographsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/PhotographsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/PicturesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/PicturesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/mapper/AnimalMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mapper/AnimalMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/mapper/PicturesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mapper/PicturesMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Favorites.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Favorites.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/LikeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/LikeList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Photographs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Photographs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Pictures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Pictures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/factory/AnimalFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/factory/AnimalFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/IAnimalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/IAnimalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/IPicturesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/IPicturesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/AnimalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/AnimalServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/PhotographsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/PhotographsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/PicturesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/PicturesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/AnimalMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/AnimalMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/PicturesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/PicturesMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="application" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -79,119 +81,55 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/beordie/controller/FileController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/mappers/AnimalMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/beordie/controller/AnimalController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/beordie/model/factory/AnimalFactory.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/beordie/config/MybatisPlusConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/beordie/config/MvcConfigurer.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/beordie/service/impl/AnimalServiceImpl.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="E:\downLoad-Package\apache-maven-3.8.1\maven-repo" />
-        <option name="mavenHome" value="E:/downLoad-Package/apache-maven-3.8.1" />
-        <option name="userSettingsFile" value="E:\downLoad-Package\apache-maven-3.8.1\conf\settings.xml" />
+        <option name="userSettingsFile" value="D:\java_install\maven\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="2" />
-  </component>
-  <component name="ProjectId" id="2MOPw2cCnkNc5O37DH9bb7llFCY" />
+  <component name="ProjectId" id="2MRQgirKk9PNNgKC0mR3tZrq0dO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/图库/classProject/2023/zoos/zoos-serve",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "MavenSettings"
-  }
-}]]></component>
-  <component name="RunManager" selected="Spring Boot.ZooApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MybatisPlusUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.beordie.mammalian.utils.MybatisPlusUtils" />
-      <module name="zoos-serve" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.beordie.mammalian.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MammaliaTest.testPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="zoos-serve" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.beordie.mammalian.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.beordie.mammalian" />
-      <option name="MAIN_CLASS_NAME" value="com.beordie.mammalian.MammaliaTest" />
-      <option name="METHOD_NAME" value="testPage" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MammaliaTest.testQuery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="zoos-serve" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.beordie.mammalian.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.beordie.mammalian" />
-      <option name="MAIN_CLASS_NAME" value="com.beordie.mammalian.MammaliaTest" />
-      <option name="METHOD_NAME" value="testQuery" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MammaliaTest.testUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="zoos-serve" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.beordie.mammalian.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.beordie.mammalian" />
-      <option name="MAIN_CLASS_NAME" value="com.beordie.mammalian.MammaliaTest" />
-      <option name="METHOD_NAME" value="testUsername" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/image/rolated" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.21103117" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\30500\Desktop\课程实习\zoos\zoos-serve\src\main\resources\static\image\rolated" />
+      <recent name="C:\Users\30500\Desktop\课程实习\zoos\zoos-serve\src\main\resources\static\image\zoo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\30500\Desktop\课程实习\zoos\zoos-serve\src\main\resources\static\image\zoo" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration name="ZooApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="zoos-serve" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.beordie.ZooApplication" />
@@ -199,30 +137,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.MammaliaTest.testPage" />
-        <item itemvalue="JUnit.MammaliaTest.testUsername" />
-        <item itemvalue="JUnit.MammaliaTest.testQuery" />
-        <item itemvalue="应用程序.MybatisPlusUtils" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1284d0b9-3fcb-449a-9ff3-22766d82225b" name="Default Changelist" comment="" />
-      <created>1677635891425</created>
+      <changelist id="3474f89e-d4c4-4f15-9714-080491729eab" name="Default Changelist" comment="" />
+      <created>1677725761740</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1677635891425</updated>
-<<<<<<< HEAD
-      <workItem from="1677635893096" duration="1161000" />
-=======
-      <workItem from="1677635893096" duration="566000" />
-      <workItem from="1677659088580" duration="1395000" />
->>>>>>> d3a1256e28a317ba8374bf50e6868bf7abf587b4
+      <updated>1677725761740</updated>
+      <workItem from="1677725763848" duration="2168000" />
+      <workItem from="1677728030830" duration="161000" />
+      <workItem from="1677728201728" duration="10000" />
+      <workItem from="1677728239054" duration="1529000" />
+      <workItem from="1677738622669" duration="4833000" />
+      <workItem from="1677744518003" duration="4480000" />
+      <workItem from="1677761745263" duration="2404000" />
+      <workItem from="1677764241800" duration="186000" />
+      <workItem from="1677805410648" duration="6598000" />
+      <workItem from="1677814267459" duration="873000" />
+      <workItem from="1677819721949" duration="8344000" />
+      <workItem from="1677834838148" duration="1823000" />
+      <workItem from="1677847263066" duration="750000" />
+      <workItem from="1677891902956" duration="5337000" />
+      <workItem from="1677910790182" duration="1901000" />
+      <workItem from="1678066724467" duration="6660000" />
+      <workItem from="1678078712471" duration="10378000" />
+      <workItem from="1678090100818" duration="11729000" />
+      <workItem from="1678110946412" duration="2696000" />
+      <workItem from="1678149173942" duration="702000" />
+      <workItem from="1678150443317" duration="6990000" />
+      <workItem from="1678164996149" duration="6698000" />
+      <workItem from="1678176743320" duration="5564000" />
+      <workItem from="1678185737812" duration="1016000" />
     </task>
+    <task id="LOCAL-00001" summary="增加用户、举报、动物、摄影模块功能">
+      <created>1677764417450</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677764417450</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,5 +194,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="增加用户、举报、动物、摄影模块功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加用户、举报、动物、摄影模块功能" />
   </component>
 </project>

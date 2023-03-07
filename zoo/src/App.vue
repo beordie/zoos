@@ -4,7 +4,8 @@
       <el-header class="header-color">
         <el-row type="flex">
           <el-col :span="10">
-            <div>
+            <a href="/">
+              <div>
                 <img class="img-center" style="height: 60px;" :src="logo"/>
                 <img class="img-center" style="height: 60px;" :src="logo1"/>
                 <img class="img-center" style="height: 60px;" :src="logo2"/>
@@ -12,7 +13,9 @@
                 <img class="img-center" style="height: 60px;" :src="logo4"/>
                 <img class="img-center" style="height: 60px;" :src="logo5"/>
                 <img class="img-center" style="height: 60px;" :src="logo6"/>
-              </div>
+            </div>
+            </a>
+            
           </el-col>
           <el-col :span="8" class="header-color">
             <el-menu mode="horizontal" router>
@@ -20,7 +23,7 @@
                 <template slot="title">分类查询</template>
                 <el-menu-item disabled index="1-1">国家一级保护动物</el-menu-item>
                 <el-menu-item disabled index="1-2">国家二级保护动物</el-menu-item>
-                <el-menu-item index="1-3">哺乳动物</el-menu-item>
+                <el-menu-item index="/search">哺乳动物</el-menu-item>
               </el-submenu>
               <el-submenu index="2">
                 <template slot="title">摄影作品</template>
@@ -42,11 +45,11 @@
                   <el-avatar style="margin: 10px;" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
                 </span>
                 <el-dropdown-menu slot="dropdown">
-                  <el-dropdown-item @click.native="login">登陆</el-dropdown-item>
-                  <el-dropdown-item @click.native="register">注册</el-dropdown-item>
-                  <el-dropdown-item disabled>信息</el-dropdown-item>
-                  <el-dropdown-item divided @click.native="report">举报</el-dropdown-item>
-                  <el-dropdown-item>退出</el-dropdown-item>
+                  <el-dropdown-item @click.native="loginVisible">登陆</el-dropdown-item>
+                  <el-dropdown-item @click.native="registerVisible">注册</el-dropdown-item>
+                  <el-dropdown-item @click.native="infoVisible">信息</el-dropdown-item>
+                  <el-dropdown-item divided @click.native="reportVisible">举报</el-dropdown-item>
+                  <el-dropdown-item @click.native="loginOut">退出</el-dropdown-item>
                 </el-dropdown-menu>
               </el-dropdown>
             </div>
@@ -62,23 +65,23 @@
             <div class="row row-50">
               <div class="col-lg-4">
                 <div class="inset-right-1">
-                  <h4>About Me</h4>
-                  <p>My name is Jonathan Davis and I’m professional photographer and retoucher. I’m offering my services to individual and corporate clients throughout the USA. Make your favorite life moment or event last and remain in your memory!</p>
+                  <h4>关于我们</h4>
+                  <p>17组</p>
                 </div>
               </div>
               <div class="col-sm-6 col-md-5 col-lg-4">
                 <div class="box-1">
-                  <h4>Contact Information</h4>
+                  <h4>联系方式</h4>
                   <ul class="list-sm">
-                    <li class="object-inline"><span class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a class="link-default" href="#">2130 Fulton Street <br> San Diego, CA 94117-1080 USA</a></li>
-                    <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a class="link-default" href="tel:#">1-800-1234-678</a></li>
-                    <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a class="link-default" href="mailto:#">info@demolink.org</a></li>
+                    <li class="object-inline"><span class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a class="link-default" href="#">临潼区 <br> 西安科技大学</a></li>
+                    <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a class="link-default" href="tel:#">（+86）9090-900</a></li>
+                    <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a class="link-default" href="mailto:#">beordie.cloud@gmail.com</a></li>
                   </ul>
                 </div>
               </div>
               <div class="col-sm-6 col-md-7 col-lg-4">
-                <h4>Newsletter</h4>
-                <p>Sign up to my newsletter and be the first to know about the latest news, special offers, events, and discounts.</p>
+                <h4>加入我们</h4>
+                <p>通过邮件加入我们，但不一定会处理。</p>
                 <!-- RD Mailform-->
                 <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
                   <div class="form-wrap">
@@ -96,13 +99,16 @@
       </el-footer>
 
       <el-dialog title="注册" :visible.sync="RegisterVisible" :width="width" :before-close="handleClose">
-        <Register />
+        <Register/>
       </el-dialog>
       <el-dialog title="登陆" :visible.sync="LoginVisible" :width="width" :before-close="handleClose">
-        <Login />
+        <Login/>
       </el-dialog>
       <el-dialog title="举报" :visible.sync="ReportVisible" :width="width" :before-close="handleClose">
-        <Report />
+        <Report/>
+      </el-dialog>
+      <el-dialog title="个人信息" :visible.sync="InfoVisible" :width="width" :before-close="handleClose">
+        <Info/>
       </el-dialog>
     </el-container>
   </div>
@@ -112,11 +118,12 @@
 import Register from './components/plugin/register-in.vue'
 import Login from './components/plugin/sing-in.vue'
 import Report from './components/plugin/report-in.vue'
+import Info from './components/plugin/info.vue'
 
 export default {
   name: 'App',
   components: {
-    Register, Login, Report
+    Register, Login, Report, Info
   },
   data() {
     return {
@@ -130,79 +137,87 @@ export default {
       RegisterVisible: false,
       LoginVisible: false,
       ReportVisible: false,
+      InfoVisible: false,
       width: '30%',
+      search_text: ''
     }
   },
   methods: {
     handleClose(done) {
        done();
     },
-    register() {
+    registerVisible() {
       this.RegisterVisible = true
     },
-    login() {
+    loginVisible() {
       this.LoginVisible = true
     },
-    report() {
+    reportVisible() {
       this.ReportVisible = true
+    },
+    infoVisible() {
+      this.InfoVisible = true
+    },
+    loginOut() {
+      
     },
     search() {
       this.$router.push('/search')
-    }
+    },
   }
 }
 </script>
 
 <style>
 .header-avatar>.el-dropdown {
-  height: 60px;
+    height: 60px;
 }
 .header-avatar {
-  height: 60px;
-  line-height: 60px;
-  margin: auto;
-  text-align: center;
-  align-items: center;
+    height: 60px;
+    line-height: 60px;
+    margin: auto;
+    text-align: center;
+    align-items: center;
 }
 
 .header-color {
-  background-color: rgb(62, 95, 133);
-  color: white;
-  height: 60px;
+    background-color: rgb(62, 95, 133);
+    color: white;
+    height: 60px;
 }
 
 .footer-color {
-  background-color: rgb(62, 95, 133);
-  color: white;
+    background-color: rgb(62, 95, 133);
+    color: white;
 }
 
 .el-footer {
-  padding: 0px;
+    padding: 0px;
 }
 
 .header-color>.el-menu {
-  background-color: rgb(62, 95, 133);
+    background-color: rgb(62, 95, 133);
 }
 
 .header-color>.el-menu--horizontal>.el-submenu .el-submenu__title {
-  color: white;
-  font-weight: bold;
+    color: white;
+    font-weight: bold;
 }
 
 .header-color>.el-menu.el-menu--horizontal {
-  border-bottom: none
+    border-bottom: none
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
 }
 
 body {
-  margin: 0px;
+    margin: 0px;
 }
 
 .el-menu .el-menu-item:hover{

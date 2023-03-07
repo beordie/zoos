@@ -7,18 +7,32 @@ import * as echarts from 'echarts';
 export default {
     data() {
             return {
+                data: {
+                    name: [],
+                    data: []
+                }
         }
     },
     methods: {
+        getSecond() {
+            this.$http.get(this.$host+'/animal/data/genus/max').then(res => {
+                if (res.data.code != 200) {
+                    this.$message.error('当前服务异常，请稍后再试');
+                } else {
+                    this.data = res.data.data;
+                }
+                this.buildChart()
+            })
+        },
         buildChart() {
             var chartDom = document.getElementById('mu');
             var myChart = echarts.init(chartDom);
             var option;
 
             // prettier-ignore
-            let dataAxis = ['点', '击', '柱', '子', '或', '者', '两', '指', '在', '触', '屏', '上', '滑', '动', '能', '够', '自', '动', '缩', '放'];
+            let dataAxis = this.data.name
             // prettier-ignore
-            let data = [220, 182, 191, 234, 290, 330, 310, 123, 442, 321, 90, 149, 210, 122, 133, 334, 198, 123, 125, 220];
+            let data = this.data.data
             let yMax = 500;
             let dataShadow = [];
             for (let i = 0; i < data.length; i++) {
@@ -99,7 +113,7 @@ export default {
         }
     },
     mounted() {
-      this.buildChart()
+      this.getSecond()
     }
 }
 </script>

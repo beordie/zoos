@@ -7,13 +7,13 @@
           <form class="mt-sm-4">
             <!-- Email -->
             <div class="mb-3 input-group-lg">
-              <input v-model="name" type="text" class="form-control" placeholder="用户名">
+              <input v-model="sign.username" type="text" class="form-control" placeholder="用户名">
             </div>
             <!-- New password -->
             <div class="mb-3 position-relative">
               <!-- Password -->
               <div class="input-group input-group-lg">
-                <input v-model="password" class="form-control fakepassword" type="password" id="psw-input"
+                <input v-model="sign.password" class="form-control fakepassword" type="password" id="psw-input"
                   placeholder="密码">
                 <span class="input-group-text p-0">
                   <i class="fakepasswordicon fa-solid fa-eye-slash cursor-pointer p-2 w-40px"></i>
@@ -57,35 +57,36 @@
   export default {
     data() {
       return {
-        name: '',
-        password: '',
+        sign: {
+          username: '',
+          password: ''
+        }
       }
     },
     methods: {
       login() {
-        if(this.name == '' || this.password == '') {
+        if(this.sign.username == '' || this.sign.password == '') {
           this.$message.warning('用户名密码不能为空');
           return;
         }
-        this.$http.post('http://127.0.0.1:83/user/login', {
-          name: this.name,
-          password: this.password
-        }).then(res => {
+        this.$http.post(this.$host+'/user/login', this.sign).then(res => {
           if (res.data.code != 200) {
             this.$message.error('当前服务异常，请稍后再试');
           } else {
             this.$message({
-              message: '登陆成功, 请手动关闭登录页',
+              message: '登陆成功',
               type: 'success',
               showClose: true
             });
-            localStorage.setItem('token', res.data.data.token);
-            localStorage.setItem('username', res.data.data.name);
-            localStorage.setItem('avatar', res.data.data.image);
-            this.$forceUpdate();
+            this.user = res.data.data
+            console.log(this.user)
+            localStorage.setItem('username', this.user.username);
+            localStorage.setItem('userId', this.user.id);
+            this.$parent.handleClose();
           }
         })
-      }
+
+      },
     }
   }
 </script>

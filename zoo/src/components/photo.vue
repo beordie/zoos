@@ -2,24 +2,24 @@
     <main class="">
         <div class="ie-panel"><img src="../assets/images/banner/background-03-1920x310.jpg"></div>
         <div class="page">
-            <section class="section section-sm">
+            <section class="section section-sm" v-for="(photo, index) in photos" :key="index" :class="index % 2 == 0 ? 'section-last': ''">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-10 col-xl-8">
-                          <h6>Left aligned image</h6>
-                            <div class="row row-30">
-                                <div class="col-md-6"><img src="../assets/images/team-1-336x336.jpg" alt="" width="770" height="456"/>
+                          <h6>{{ index % 2 == 0 ? 'Right aligned image': 'Left aligned image'}}</h6>
+                            <div class="row row-30" :class="index % 2 == 0 ? 'flex-md-row-reverse': ''">
+                                <div class="col-md-6"><img :src="host + photo.picture" alt="" width="770" height="456"/>
                                 </div>
                                 <div class="col-md-6">
-                                    <el-descriptions class="margin-top" title="详细信息" :column="2" :size="size">
+                                    <el-descriptions class="margin-top" title="详细信息" :column="2">
                                         <template slot="extra">
                                           <el-button icon="el-icon-favorite" size="small" circle=""></el-button>
                                         </template>
-                                        <el-descriptions-item label="中文名">kooriookami</el-descriptions-item>
-                                        <el-descriptions-item label="拉丁文名">18100000000</el-descriptions-item>
-                                        <el-descriptions-item label="拍摄人">苏州市</el-descriptions-item>
-                                        <el-descriptions-item label="拍摄时间"></el-descriptions-item>
-                                        <el-descriptions-item label="拍摄地点">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
+                                        <el-descriptions-item label="中文名">{{ photo.chineseName }}</el-descriptions-item>
+                                        <el-descriptions-item label="拉丁文名">{{ photo.latinName }}</el-descriptions-item>
+                                        <el-descriptions-item label="拍摄人">{{ photo.photographer }}</el-descriptions-item>
+                                        <el-descriptions-item label="拍摄时间">{{ dateFormat(photo.shootingTime) }}</el-descriptions-item>
+                                        <el-descriptions-item label="拍摄地点">{{ photo.shootingLocation }}</el-descriptions-item>
                                     </el-descriptions>
                                 </div>
                             </div>
@@ -27,33 +27,9 @@
                     </div>
                 </div>
             </section>
-
-            <section class="section section-sm section-last">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-10 col-xl-8">
-              <h6>Right aligned image</h6>
-              <div class="row row-30 flex-md-row-reverse">
-                <div class="col-md-6"><img src="../assets/images/team-1-336x336.jpg"/>
-                </div>
-                <div class="col-md-6">
-                    <el-descriptions class="margin-top" title="详细信息" :column="2" :size="size">
-                        <template slot="extra">
-                          <el-button icon="el-icon-favorite" size="small" circle=""></el-button>
-                        </template>
-                        <el-descriptions-item label="中文名">kooriookami</el-descriptions-item>
-                        <el-descriptions-item label="拉丁文名">18100000000</el-descriptions-item>
-                        <el-descriptions-item label="拍摄人">苏州市</el-descriptions-item>
-                        <el-descriptions-item label="拍摄时间"></el-descriptions-item>
-                        <el-descriptions-item label="拍摄地点">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
-                    </el-descriptions>
-                </div>
-              </div>
-            </div>
-          </div>
+            <el-button type="primary" v-if="pageParams.isLoad" icon="el-icon-loading" @click="loading">加载更多</el-button>
         </div>
-      </section>
-        </div>
+        
     </main>
   </template>
 
@@ -64,30 +40,58 @@ export default {
       gang: '',
       gangs: [],
       condition: '',
-      zoos: [
-      {
-          name: '熊猫',
-          image: require('../assets/images/team-1-336x336.jpg'),
-          info: '巴拉巴拉巴拉',
-          classify: '哺乳类'
-        },
+      photos: [
         {
-          name: '狗熊',
-          image: require('../assets/images/team-1-336x336.jpg'),
-          info: '巴拉巴拉巴拉',
-          classify: '哺乳类'
-        },
-      ]
+          id: 1,
+          chineseName: '小狗撒料图',
+          latinName: '一只小狗在撒尿',
+          photographer: '李四',
+          shootingTime: 1677899495000,
+          shootingLocation: '北京市',
+          picture: '',
+        }
+      ],
+      pageParams: {
+        offset: 1,
+        limit: 10,
+        isLoad: true
+      },
+      host: this.$host
     };
   },
   methods: {
-    
+    selectList () {
+      this.$http.get(this.$host + 'photographs/list?offset=' + this.pageParams.offset
+          + "&limit=" + this.pageParams.limit
+      ).then(res => {
+          if (res.data.code == 200) {
+              this.$notify({
+                  title: '成功',
+                  message: '查询成功',
+                  type: 'success'
+              });
+              console.log(res)
+              this.photos = res.data.data
+          } else {
+              console.log(res)
+          }
+      }).catch(({err}) => {
+          window.alert(err)
+      })
+    },
+    dateFormat(date) { 
+        if (date == undefined) { 
+            return ""; 
+        } 
+        return this.$moment(date).format("YYYY年MM月DD日 HH:mm:ss"); 
+    },
   },
 
   created() {
 
   },
   mounted() {
+    this.selectList()
   }
 
 }

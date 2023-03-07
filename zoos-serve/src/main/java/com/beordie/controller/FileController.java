@@ -5,6 +5,7 @@ import com.beordie.config.CommonConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -27,8 +28,8 @@ public class FileController {
     @Autowired
     private CommonConfig config;
 
-    @RequestMapping("upload")
-    public Result upload(@RequestParam("image") MultipartFile image,
+    @RequestMapping(value = "upload", method = RequestMethod.POST)
+    public Result upload(@RequestParam("photo") MultipartFile image,
                          @RequestParam("type") String type,
                          HttpServletRequest request){
         String originalFilename = image.getOriginalFilename();

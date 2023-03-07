@@ -2,6 +2,7 @@ package com.beordie.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -11,8 +12,8 @@ import org.springframework.stereotype.Controller;
  * @author coffeemao
  * @since 2023-03-01
  */
-@Controller
-@RequestMapping("/mammalian/favorites")
+@RestController
+@RequestMapping("/favorites")
 public class FavoritesController {
 
 }

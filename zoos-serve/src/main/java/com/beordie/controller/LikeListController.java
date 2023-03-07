@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,8 +21,8 @@ import javax.servlet.http.HttpServletRequest;
  * @author coffeemao
  * @since 2023-03-01
  */
-@Controller
-@RequestMapping("/mammalian/likeList")
+@RestController
+@RequestMapping("/likeList")
 public class LikeListController {
     @Autowired
     private ILikeListService likeListService;
