@@ -3,13 +3,11 @@ package com.beordie.controller;
 import com.beordie.common.Result;
 import com.beordie.model.entity.LikeList;
 import com.beordie.model.factory.PhotoFactory;
+import com.beordie.model.request.UserLike;
 import com.beordie.service.ILikeListService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -22,20 +20,20 @@ import javax.servlet.http.HttpServletRequest;
  * @since 2023-03-01
  */
 @RestController
-@RequestMapping("/likeList")
+@RequestMapping("/like")
 public class LikeListController {
     @Autowired
     private ILikeListService likeListService;
 
-    @PostMapping("like")
-    public Result liked(@RequestParam("photoId") Integer photoId,
+    @PostMapping("")
+    public Result liked(@RequestBody UserLike userLike,
                         HttpServletRequest request) {
         String userId = request.getHeader("userId");
         if (userId == null) {
             return Result.ACCESS;
         }
-        LikeList like = PhotoFactory.buildLike(photoId, Integer.parseInt(userId));
-        boolean save = likeListService.save(like);
-        return save ? new Result<>() : Result.failed();
+        int uid = Integer.parseInt(userId);
+        boolean like = likeListService.like(uid, userLike.getPid(), userLike.getIsLike());
+        return like ? new Result<>() : Result.failed();
     }
 }

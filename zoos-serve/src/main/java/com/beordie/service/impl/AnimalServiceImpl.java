@@ -2,10 +2,12 @@ package com.beordie.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.beordie.mapper.FavoritesMapper;
 import com.beordie.mapper.PicturesMapper;
 import com.beordie.model.Data;
 import com.beordie.model.entity.Animal;
 import com.beordie.mapper.AnimalMapper;
+import com.beordie.model.entity.Favorites;
 import com.beordie.model.entity.Pictures;
 import com.beordie.model.factory.AnimalFactory;
 import com.beordie.model.factory.PicturesFactory;
@@ -39,13 +41,16 @@ public class AnimalServiceImpl extends ServiceImpl<AnimalMapper, Animal> impleme
     @Autowired
     private PicturesMapper picturesMapper;
 
+    @Autowired
+    private FavoritesMapper favoritesMapper;
+
     private Cache<String, List<Integer>> recommendAnimals = null;
 
     @Override
-    public List<Animal> selectAnimals(AnimalZoo animal) {
+    public List<Animal> selectAnimals(AnimalZoo animal, String userId) {
         QueryWrapper<Animal> animalQueryWrapper = AnimalFactory.buildQueryByAnimalClassfy(animal);
         Page queryPages = AnimalFactory.buildQueryPages(animal.getOffset() == null ? 0 : animal.getOffset(),
-                animal.getLimit() == null ? 10 : animal.getLimit());
+                animal.getLimit() == null ? 12 : animal.getLimit());
         List<Animal> animals = super.page(queryPages, animalQueryWrapper).getRecords();
         List<Integer> animalIds = new ArrayList<>();
         animals.forEach(zoo->{
@@ -53,12 +58,22 @@ public class AnimalServiceImpl extends ServiceImpl<AnimalMapper, Animal> impleme
         });
         List<Pictures> pictures = picturesMapper.selectPictureByAnimalBatch(animalIds);
         Map<Integer, List> map = new HashMap<>();
+        Set<Integer> sets = new HashSet<>();
         pictures.forEach(picture->{
             List<String> address = Arrays.asList(picture.getPictureAddress().split(","));
             map.put(picture.getAid(), address);
         });
+        if (userId != null) {
+            int uid = Integer.parseInt(userId);
+            QueryWrapper<Favorites> favoritesQueryWrapper = AnimalFactory.buildQueryByUserId(uid);
+            List<Favorites> favorites = favoritesMapper.selectList(favoritesQueryWrapper);
+            favorites.forEach(favorite->{
+                sets.add(favorite.getAid());
+            });
+        }
         animals.forEach(zoo->{
             zoo.setSmallPicture(map.get(zoo.getId()));
+            zoo.setFavorite(sets.contains(zoo.getId()) ? 1 : 0);
         });
         return animals;
     }
@@ -133,7 +148,7 @@ public class AnimalServiceImpl extends ServiceImpl<AnimalMapper, Animal> impleme
     }
 
     @Override
-    public Animal getAnimal(QueryWrapper<Animal> animalQueryWrapper) {
+    public Animal getAnimal(QueryWrapper<Animal> animalQueryWrapper, String userId) {
         Animal animal = super.getOne(animalQueryWrapper);
         QueryWrapper<Pictures> picturesQueryWrapper = PicturesFactory.buildQuerySmall(animal.getId());
         List<Pictures> pictures = picturesMapper.selectList(picturesQueryWrapper);
@@ -142,6 +157,16 @@ public class AnimalServiceImpl extends ServiceImpl<AnimalMapper, Animal> impleme
             smallPicture.add(picture.getPictureAddress());
         });
         animal.setSmallPicture(smallPicture);
+        if (userId != null) {
+            int uid = Integer.parseInt(userId);
+            QueryWrapper<Favorites> favoritesQueryWrapper = AnimalFactory.buildQueryByUserId(uid, animal.getId());
+            Favorites selectOne = favoritesMapper.selectOne(favoritesQueryWrapper);
+            if (selectOne == null) {
+                animal.setFavorite(0);
+            } else {
+                animal.setFavorite(1);
+            }
+        }
         return animal;
     }
 
@@ -231,7 +256,7 @@ public class AnimalServiceImpl extends ServiceImpl<AnimalMapper, Animal> impleme
         Random random = new Random();
         List<Integer> recommendAnimals = new ArrayList<>();
         Set<Integer> tempAnimals = new HashSet<>();
-        while (tempAnimals.size() < 4) {
+        while (tempAnimals.size() < 3) {
             tempAnimals.add(random.nextInt(allAnimals.size()));
         }
         tempAnimals.stream().forEach(id->{

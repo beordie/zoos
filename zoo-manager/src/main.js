@@ -19,7 +19,11 @@ import 'quill/dist/quill.bubble.css'
 
 Vue.use(VueQuillEditor)
 Vue.config.productionTip = false
-Vue.prototype.$http = Axios
+Vue.prototype.$http = Axios.create({
+  headers: {
+    'role': 'admin'
+  },
+});
 Vue.prototype.$moment = Moment
 Vue.prototype.$host = 'http://127.0.0.1:80/'
 Vue.use(ElementUI)

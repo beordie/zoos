@@ -7,6 +7,7 @@ import com.beordie.common.Result;
 import com.beordie.model.entity.User;
 import com.beordie.mapper.UserMapper;
 import com.beordie.model.factory.UserFactory;
+import com.beordie.model.request.AdminUser;
 import com.beordie.model.request.Sign;
 import com.beordie.service.IEmailService;
 import com.beordie.service.IUserService;
@@ -64,18 +65,15 @@ public class UserController {
     }
 
     @PostMapping("login/admin")
-    public Result<User> loginAdmin(@RequestParam("username") String username,
-                                   @RequestParam("password") String password,
-                                   @RequestParam("code") String code,
-                                   @RequestParam("email") String email) {
-        if (!"beordie".equals(username) || !"123456".equals(password)) {
+    public Result<User> loginAdmin(@RequestBody AdminUser adminUser) {
+        if (!"beordie".equals(adminUser.getUsername()) || !"123456".equals(adminUser.getPassword())) {
             return Result.PARAM;
         }
-        String oldCode = htmlEmailService.getCode(email);
-        if (oldCode == null || oldCode.equals(code)) {
+        String oldCode = htmlEmailService.getCode(adminUser.getEmail());
+        if (oldCode == null || !oldCode.equals(adminUser.getCode())) {
             return Result.PARAM;
         }
-        return new Result<>(UserFactory.buildUser(username, ""));
+        return new Result<>(UserFactory.buildUser(adminUser.getUsername(), ""));
     }
 
     @PostMapping("fill")

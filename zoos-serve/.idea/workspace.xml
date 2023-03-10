@@ -5,65 +5,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3474f89e-d4c4-4f15-9714-080491729eab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/Data.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/factory/PicturesFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/request/AnimalKind.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/request/AnimalPicture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/request/AnimalZoo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/request/Sign.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/IEmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/IMessageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/HtmlEmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/util/StringUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/zoo/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/zoo/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/zoo/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/zoo/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zoo/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zoo/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zoo/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/common/exception/AccessRuntimeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/AccessExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/request/AdminUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/request/UserFavorite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/request/UserLike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo-manager/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo-manager/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo-manager/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo-manager/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zoo-manager/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo-manager/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../zoo/src/assets/css/icon.css" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/assets/css/icon.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zoo/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../zoo/src/components/photo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/photo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zoo/src/components/plugin/echart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/plugin/echart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zoo/src/components/plugin/gang.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/plugin/gang.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zoo/src/components/plugin/mu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/plugin/mu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zoo/src/components/plugin/register-in.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/plugin/register-in.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zoo/src/components/plugin/report-in.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/plugin/report-in.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zoo/src/components/plugin/sing-in.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/plugin/sing-in.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../zoo/src/components/search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/components/search.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zoo/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../zoo/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/ZooApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/ZooApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/config/MvcConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/config/MvcConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/aspect/AccessAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/aspect/AccessAspect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/AnimalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/AnimalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/FavoritesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/FavoritesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/FileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/LikeListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/LikeListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/PhotographsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/PhotographsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/PicturesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/PicturesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/ReportController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/mapper/AnimalMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mapper/AnimalMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/mapper/PicturesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mapper/PicturesMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/mapper/LikeListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/mapper/LikeListMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Favorites.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Favorites.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/LikeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/LikeList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Photographs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Photographs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Pictures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Pictures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/model/factory/AnimalFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/model/factory/AnimalFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/IAnimalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/IAnimalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/IPicturesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/IPicturesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/IEmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/IEmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/IFavoritesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/IFavoritesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/ILikeListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/ILikeListService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/AnimalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/AnimalServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/FavoritesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/FavoritesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/HtmlEmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/HtmlEmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/LikeListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/LikeListServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/PhotographsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/PhotographsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/PicturesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/PicturesServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beordie/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/AnimalMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/AnimalMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/PicturesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/PicturesMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/aspect/AccessAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/aspect/AccessAspect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/controller/AnimalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/controller/AnimalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/controller/FavoritesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/controller/FavoritesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/controller/LikeListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/controller/LikeListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/model/entity/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/model/entity/Animal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/model/entity/Favorites.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/model/entity/Favorites.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/model/entity/LikeList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/model/entity/LikeList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/model/factory/AnimalFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/model/factory/AnimalFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/service/IAnimalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/service/IAnimalService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/service/IEmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/service/IEmailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/service/IFavoritesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/service/IFavoritesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/service/ILikeListService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/service/ILikeListService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/AnimalServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/AnimalServiceImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/AnimalServiceImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/AnimalServiceImpl$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/AnimalServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/AnimalServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/FavoritesServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/FavoritesServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/HtmlEmailService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/HtmlEmailService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/HtmlEmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/HtmlEmailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/LikeListServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/LikeListServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/PhotographsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beordie/service/impl/PhotographsServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +162,12 @@
       <workItem from="1678164996149" duration="6698000" />
       <workItem from="1678176743320" duration="5564000" />
       <workItem from="1678185737812" duration="1016000" />
+      <workItem from="1678237194040" duration="2184000" />
+      <workItem from="1678240182971" duration="2987000" />
+      <workItem from="1678252455560" duration="587000" />
+      <workItem from="1678274684943" duration="751000" />
+      <workItem from="1678278311296" duration="6391000" />
+      <workItem from="1678349301991" duration="4892000" />
     </task>
     <task id="LOCAL-00001" summary="增加用户、举报、动物、摄影模块功能">
       <created>1677764417450</created>
@@ -199,5 +197,26 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="增加用户、举报、动物、摄影模块功能" />
     <option name="LAST_COMMIT_MESSAGE" value="增加用户、举报、动物、摄影模块功能" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/beordie/controller/UserController.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/beordie/service/impl/AnimalServiceImpl.java</url>
+          <line>255</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/beordie/service/impl/AnimalServiceImpl.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

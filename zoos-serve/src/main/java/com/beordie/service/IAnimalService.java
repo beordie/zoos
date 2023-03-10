@@ -20,7 +20,7 @@ import java.util.Map;
  * @since 2023-03-01
  */
 public interface IAnimalService extends IService<Animal> {
-    public List<Animal> selectAnimals(AnimalZoo animal);
+    public List<Animal> selectAnimals(AnimalZoo animal, String userId);
 
     public List<Integer> getRecommendAnimals(String username);
 
@@ -44,7 +44,7 @@ public interface IAnimalService extends IService<Animal> {
 
     public Map<String, List> getOrderGenusRanking();
 
-    public Animal getAnimal(QueryWrapper<Animal> animalQueryWrapper);
+    public Animal getAnimal(QueryWrapper<Animal> animalQueryWrapper, String userId);
 
     public List<Animal> getKindClassSpecies(int offset, int limit);
 

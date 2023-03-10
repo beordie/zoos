@@ -23,6 +23,7 @@ import java.util.function.Function;
  * @Date 2023/3/3 17:17
  * @User beordie
  */
+@Service
 public class HtmlEmailService extends IEmailService {
 
     private Cache<String, String> codeCache = null;
@@ -76,7 +77,7 @@ public class HtmlEmailService extends IEmailService {
         this.codeCache = Caffeine.newBuilder()
                 .initialCapacity(1000)
                 .maximumSize(10000)
-                .expireAfterWrite(1, TimeUnit.MINUTES)
+                .expireAfterWrite(30, TimeUnit.MINUTES)
                 .build();;
     }
 }

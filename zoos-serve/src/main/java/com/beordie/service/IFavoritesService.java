@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2023-03-01
  */
 public interface IFavoritesService extends IService<Favorites> {
-
+    public boolean favorites(int uid, int aid, int isFavorites);
 }

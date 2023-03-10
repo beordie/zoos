@@ -31,13 +31,16 @@
                     <el-col :span="6" v-for="(zoo, index) in zoos" :key="index">
                         <el-card class="box-card center hots" shadow="always" style="margin:10px">
                             <el-descriptions :column="2" :title="zoo.chineseName" :colon="false">
+                                <template slot="extra">
+                                    <el-tag type="danger" v-if="zoo.protectionClass !== ''">{{ zoo.protectionClass}}</el-tag>
+                                </template>
                                 <el-descriptions-item >
                                     <el-tag>{{ zoo.classSpecies }} | {{ zoo.subclass }} | {{ zoo.orders }} | {{ zoo.family }} | {{ zoo.genus }}</el-tag>
                                 </el-descriptions-item>
                                 <el-descriptions-item >
                                     
                                 </el-descriptions-item>
-                                <el-descriptions-item ><div v-html="zoo.details"></div></el-descriptions-item>
+                                <el-descriptions-item ><div v-html="zoo.historySpeciology"></div></el-descriptions-item>
                                 <el-descriptions-item :contentStyle="{'margin-left': '40px'}">
                                     <el-image @click="jump(index)" style="width: 100px; height: 100px" :src="host + zoo.upperGenusClassification"></el-image>
                                 </el-descriptions-item>
@@ -88,8 +91,9 @@
                                     </el-row>
                                     <el-descriptions class="margin-top" :column="2">
                                         <template slot="extra">
-                                            <el-button icon="el-icon-like-before" size="small" circle=""></el-button>
-                                        </template>                                   
+                                            <el-button :icon="showZoo.favorite == 0 ? 'el-icon-like-before' : 'el-icon-like-after'" 
+                                            size="small" circle @click="favorite(showZoo.id)"></el-button>
+                                        </template>
                                     </el-descriptions>
                                 </el-col>
                                 <span class="detail" style="font-size: medium;">详情:</span>
@@ -155,7 +159,8 @@ export default {
             subclass: '动物纲',
             orders: '狗目',
             family: '哈巴狗科',
-            genus: '小哈巴狗属'
+            genus: '小哈巴狗属',
+            favorite: 0
         }
       ],
       classSpecies: [
@@ -178,6 +183,38 @@ export default {
     };
   },
   methods: {
+    favorite(aid) {
+        if (localStorage.getItem("userId") == null) {
+          this.$notify({
+                    title: '成功',
+                    message: '请登录',
+                    type: 'danger'
+                });
+            return
+        }
+        if (this.showZoo.favorite == 1) {
+            this.showZoo.favorite = 0
+        } else {
+            this.showZoo.favorite = 1
+        }
+        this.$http.post(this.$host + 'favorites', {
+            aid: aid,
+            isFavorite: this.showZoo.favorite
+        }, {headers: {'userId': localStorage.getItem("userId")}}
+        ).then(res => {
+            if (res.data.code == 200) {
+                this.$notify({
+                    title: '成功',
+                    message: '',
+                    type: 'success'
+                });
+            } else {
+                console.log(res)
+            }
+        }).catch(({err}) => {
+            window.alert(err)
+        })
+    },
     handleClose(done) {
         this.showZoo = {}
         done();
@@ -187,7 +224,8 @@ export default {
         this.detail = true
     },
     query() {
-        this.$http.post(this.$host + 'animal/select', this.queryParams
+        this.$http.post(this.$host + 'animal/select', this.queryParams,
+        {headers: {'userId': localStorage.getItem("userId")}}
         ).then(res => {
             if (res.data.code == 200) {
                 this.$notify({
@@ -263,10 +301,12 @@ export default {
         if (id === undefined) {
             return
         }
-        this.$http.get(this.$host + '/animal/select/' + id).then(res => {
+        this.$http.get(this.$host + '/animal/select/' + id,
+        {headers: {'userId': localStorage.getItem("userId")}}).then(res => {
             if (res.data.code == 200) {
                 this.showZoo = res.data.data
                 this.detail = true
+                console.log(this.showZoo)
             } else {
                 this.$notify({
                     title: '失败',
@@ -279,6 +319,15 @@ export default {
         })
     }
   },
+  filters: {
+        ellipsis(value){
+            if (!value) return '';
+            if (value.length > 50) {
+            return value.slice(0,40) + '...'
+            }
+            return value
+        }
+    },
 
   created() {
 

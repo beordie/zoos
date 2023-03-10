@@ -89,6 +89,10 @@ public class Animal implements Serializable {
     @TableField(select = false, exist = false)
     private List<String> smallPicture;
 
+    @TableField(select = false, exist = false)
+    @ApiModelProperty(required = false)
+    private Integer favorite;
+
     @Override
     public String toString() {
         return "Animal{" +

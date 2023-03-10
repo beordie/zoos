@@ -11,6 +11,7 @@ import com.beordie.mapper.PhotographsMapper;
 import com.beordie.model.factory.PhotoFactory;
 import com.beordie.service.IPhotographsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -27,6 +28,7 @@ import java.util.Map;
  */
 @Service
 public class PhotographsServiceImpl extends ServiceImpl<PhotographsMapper, Photographs> implements IPhotographsService {
+    @Autowired
     private LikeListMapper likeListMapper;
 
     @Override
@@ -42,7 +44,7 @@ public class PhotographsServiceImpl extends ServiceImpl<PhotographsMapper, Photo
             });
         }
         photographs.stream().forEach(photograph->{
-            photograph.setLiked(likes.get(photograph.getId()));
+            photograph.setLiked(likes.get(photograph.getId()) == null ? 0 : likes.get(photograph.getId()));
         });
         return photographs;
     }

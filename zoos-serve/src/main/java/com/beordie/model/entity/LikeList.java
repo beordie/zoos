@@ -24,7 +24,6 @@ public class LikeList implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("用户id")
-    @TableId(type = IdType.AUTO)
     private Integer uid;
 
     @ApiModelProperty("摄影id")

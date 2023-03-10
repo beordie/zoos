@@ -1,5 +1,6 @@
 package com.beordie.aspect;
 
+import com.beordie.common.exception.AccessRuntimeException;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -29,7 +30,7 @@ public class AccessAspect {
     public void doBefore(JoinPoint joinPoint) throws Exception {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
                 .getRequestAttributes()).getRequest();
-        Enumeration<String> role = request.getHeaders("role");
-        if (role == null) throw new RuntimeException("");
+        String role = request.getHeader("role");
+        if (role == null) throw new AccessRuntimeException();
     }
 }

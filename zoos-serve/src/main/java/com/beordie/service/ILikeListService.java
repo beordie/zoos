@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2023-03-01
  */
 public interface ILikeListService extends IService<LikeList> {
-
+    public boolean like(int uid, int pid, int isLike);
 }

@@ -44,7 +44,7 @@
                     <img class="thumbnail-corporate-image" :src="host + zoo.upperGenusClassification" width="100%" height="100%"/>
                     <div class="thumbnail-corporate-caption">
                       <p class="thumbnail-corporate-title"><a>{{ zoo.chineseName }}</a></p>
-                      <div v-html="zoo.details"></div><a class="thumbnail-corporate-link" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span @click="toSearch(zoo.id)" class="icon mdi mdi-magnify"></span></a>
+                      <a class="thumbnail-corporate-link" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span @click="toSearch(zoo.id)" class="icon mdi mdi-magnify"></span></a>
                     </div>
                     <div class="thumbnail-corporate-dummy"></div>
                   </article>
@@ -69,7 +69,6 @@
                     <el-tag>{{ zoo.subclass }} | {{ zoo.orders }} | {{ zoo.family }} | {{ zoo.genus }}</el-tag>
                 </li>
               </ul>
-              <h4 class="post-classic-title"><div v-html="zoo.details"></div></h4>
             </article>
           </div>
         </div>
@@ -145,7 +144,9 @@ export default {
         })
     },
     getRecommendZoos() {
-      this.$http.get(this.$host+'/animal/select/recommend').then(res => {
+      this.$http.get(this.$host+'/animal/select/recommend', {
+        headers: {'username': localStorage.getItem("username")}
+      }).then(res => {
           if (res.data.code != 200) {
             this.$message.error('当前服务异常，请稍后再试');
           } else {

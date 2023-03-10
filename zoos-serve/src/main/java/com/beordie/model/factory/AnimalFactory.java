@@ -3,6 +3,8 @@ package com.beordie.model.factory;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.beordie.model.entity.Animal;
+import com.beordie.model.entity.Favorites;
+import com.beordie.model.entity.LikeList;
 import com.beordie.model.entity.User;
 import com.beordie.model.request.AnimalZoo;
 
@@ -71,5 +73,18 @@ public class AnimalFactory {
     public static Page buildQueryPages(int offset, int limit) {
         Page<User> page = new Page<>(offset,limit);
         return page;
+    }
+
+    public static QueryWrapper<Favorites> buildQueryByUserId(int uid, int aid) {
+        QueryWrapper<Favorites> wrapper = new QueryWrapper<>();
+        wrapper.eq("uid", uid);
+        wrapper.eq("aid", aid);
+        return wrapper;
+    }
+
+    public static QueryWrapper<Favorites> buildQueryByUserId(int uid) {
+        QueryWrapper<Favorites> wrapper = new QueryWrapper<>();
+        wrapper.eq("uid", uid);
+        return wrapper;
     }
 }

@@ -13,7 +13,8 @@
                                 <div class="col-md-6">
                                     <el-descriptions class="margin-top" title="详细信息" :column="2">
                                         <template slot="extra">
-                                          <el-button icon="el-icon-favorite" size="small" circle=""></el-button>
+                                          <el-button :icon="photo.liked === 0 ? 'el-icon-favorite' : 'el-icon-favorite-after'" 
+                                          size="small" circle @click="like(photo.id, photo.liked)"></el-button>
                                         </template>
                                         <el-descriptions-item label="中文名">{{ photo.chineseName }}</el-descriptions-item>
                                         <el-descriptions-item label="拉丁文名">{{ photo.latinName }}</el-descriptions-item>
@@ -49,6 +50,7 @@ export default {
           shootingTime: 1677899495000,
           shootingLocation: '北京市',
           picture: '',
+          liked: 0
         }
       ],
       pageParams: {
@@ -60,9 +62,36 @@ export default {
     };
   },
   methods: {
+    like(pid, isLike) {
+        if (localStorage.getItem("userId") == null) {
+          this.$notify({
+                    title: '成功',
+                    message: '请登录',
+                    type: 'danger'
+                });
+        }
+        isLike = isLike == 0 ? 1 : 0
+        this.$http.post(this.$host + 'like', {
+            pid: pid,
+            isLike: isLike
+        }, {headers: {'userId': localStorage.getItem("userId")}}
+        ).then(res => {
+            if (res.data.code == 200) {
+                this.$notify({
+                    title: '成功',
+                    message: '',
+                    type: 'success'
+                });
+            } else {
+                console.log(res)
+            }
+        }).catch(({err}) => {
+            window.alert(err)
+        })
+    },
     selectList () {
       this.$http.get(this.$host + 'photographs/list?offset=' + this.pageParams.offset
-          + "&limit=" + this.pageParams.limit
+          + "&limit=" + this.pageParams.limit, {headers: {'userId': localStorage.getItem("userId")}}
       ).then(res => {
           if (res.data.code == 200) {
               this.$notify({
@@ -85,6 +114,9 @@ export default {
         } 
         return this.$moment(date).format("YYYY年MM月DD日 HH:mm:ss"); 
     },
+    loading () {
+
+    }
   },
 
   created() {

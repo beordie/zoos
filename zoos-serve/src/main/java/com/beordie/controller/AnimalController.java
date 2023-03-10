@@ -69,8 +69,10 @@ public class AnimalController {
     }
 
     @PostMapping("select")
-    public Result<List<Animal>> selectAnimals(@RequestBody AnimalZoo animal) {
-        List<Animal> animals = animalService.selectAnimals(animal);
+    public Result<List<Animal>> selectAnimals(@RequestBody AnimalZoo animal,
+                                              HttpServletRequest request) {
+        String userId = request.getHeader("userId");
+        List<Animal> animals = animalService.selectAnimals(animal, userId);
         return new Result<>(animals);
     }
 
@@ -83,9 +85,11 @@ public class AnimalController {
     }
 
     @GetMapping("select/{animalId}")
-    public Result<Animal> selectAnimal(@PathVariable("animalId") Integer animalId) {
+    public Result<Animal> selectAnimal(@PathVariable("animalId") Integer animalId,
+                                       HttpServletRequest request) {
+        String userId = request.getHeader("userId");
         QueryWrapper<Animal> animalQueryWrapper = AnimalFactory.buildQueryByAnimalId(animalId);
-        Animal animal = animalService.getAnimal(animalQueryWrapper);
+        Animal animal = animalService.getAnimal(animalQueryWrapper, userId);
         return new Result<>(animal);
     }
 
